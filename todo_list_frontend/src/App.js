@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
+import ProgressCircle from "./components/ProgressCircle";
 
 const STORAGE_KEY = "kavia.todo.v1";
 
@@ -191,6 +192,8 @@ function App() {
           </div>
 
           <div className="stats" aria-label="Task statistics">
+            <ProgressCircle total={todos.length} completed={completedCount} />
+
             <div className="stat">
               <div className="stat-label">Remaining</div>
               <div className="stat-value">{remainingCount}</div>
